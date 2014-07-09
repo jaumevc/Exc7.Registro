@@ -40,7 +40,7 @@ public class Formulari {
 			Component nombre = new JLabel("Nombre:");
 			//la caixa de text a on introduir lo que ens demana l'anterior fila
 			Component tNombre = new JTextField(15);
-			tNombre.getName();
+	
 			
 			Component apellido = new JLabel("Apellido:");
 			Component tApellido = new JTextField(15);
@@ -48,9 +48,9 @@ public class Formulari {
 			Component correo = new JLabel("Correo:");
 			Component tCorreo = new JTextField(15);
 			
-			//SpinnerNumberModel valor = new SpinnerNumberModel(1,18,67,1);
 			Component edad = new JLabel("Edad:");
-			Component sEdad = new JSpinner();
+			SpinnerNumberModel valor = new SpinnerNumberModel(18,18,67,1);
+			Component sEdad = new JSpinner(valor);
 			
 			Component user = new JLabel("Usuario:");
 			Component tUser = new JTextField(15);
@@ -105,29 +105,23 @@ public class Formulari {
 			layout.putConstraint(SpringLayout.NORTH, pswd, 175, SpringLayout.NORTH, contenidor);
 			layout.putConstraint(SpringLayout.NORTH, tPswd, 175, SpringLayout.NORTH, contenidor);
 			layout.putConstraint(SpringLayout.WEST, tPswd, 3, SpringLayout.EAST, pswd);
-			
-			
+					
 			
 			frame.setSize(300,400);
 			frame.setLocation(600, 100);
-			frame.setLayout(new BoxLayout(frame.getContentPane(),BoxLayout.Y_AXIS));
-			
+			//frame.setLayout(new BoxLayout(frame.getContentPane(),BoxLayout.Y_AXIS));
 			frame.add(zonaBoto);
 			frame.setVisible(true);
-			frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-			
-			
+			frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);		
 			
 		}
 		
 		public void crearZonaBoto(){
 			zonaBoto = new JPanel();//creo la zona on hi posare el boto
-			zonaBoto.setLayout(new BoxLayout(zonaBoto, BoxLayout.Y_AXIS));
+			//zonaBoto.setLayout(new BoxLayout(zonaBoto, BoxLayout.Y_AXIS));
 			boto = new JButton();//creo el boto
 			
 			boto.setText("Validar");
-			
-			//disposicio de la zona on se situa el boto
 			
 			zonaBoto.add(boto); //a la zona per posar el boto hi  poso el boto
 		}
