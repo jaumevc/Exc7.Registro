@@ -23,7 +23,7 @@ public class Formulari {
 		JButton boto;
 		
 		public Formulari(){
-			crearZonaBoto();
+			//crearZonaBoto();
 			finestraFormulari();
 		}
 
@@ -58,8 +58,11 @@ public class Formulari {
 			Component pswd = new JLabel("Contraseña:");
 			Component tPswd = new JTextField(15);
 			
+			boto = new JButton("Validar");
+			boto.setVisible(true);
 			
-			//afegim components al contenidor
+			//afegim components al contenidor:
+			
 			contenidor.add(nombre);
 			contenidor.add(tNombre);
 			contenidor.add(apellido);
@@ -73,58 +76,61 @@ public class Formulari {
 			contenidor.add(pswd);
 			contenidor.add(tPswd);
 			
+			contenidor.add(boto);
 			
 			
 			//configuracio d'espais:
 			layout.putConstraint(SpringLayout.WEST, nombre, 10, SpringLayout.WEST, contenidor);
-			layout.putConstraint(SpringLayout.NORTH, nombre, 50, SpringLayout.NORTH, contenidor);
-			layout.putConstraint(SpringLayout.NORTH, tNombre, 50, SpringLayout.NORTH, contenidor);
+			layout.putConstraint(SpringLayout.NORTH, nombre, 25, SpringLayout.NORTH, contenidor);
+			layout.putConstraint(SpringLayout.NORTH, tNombre, 25, SpringLayout.NORTH, contenidor);
 			layout.putConstraint(SpringLayout.WEST, tNombre, 22, SpringLayout.EAST, nombre);
 			
 			layout.putConstraint(SpringLayout.WEST, apellido, 10, SpringLayout.WEST, contenidor);
-			layout.putConstraint(SpringLayout.NORTH, apellido, 75, SpringLayout.NORTH, contenidor);
-			layout.putConstraint(SpringLayout.NORTH, tApellido, 75, SpringLayout.NORTH, contenidor);
+			layout.putConstraint(SpringLayout.NORTH, apellido, 50, SpringLayout.NORTH, contenidor);
+			layout.putConstraint(SpringLayout.NORTH, tApellido, 50, SpringLayout.NORTH, contenidor);
 			layout.putConstraint(SpringLayout.WEST, tApellido, 20, SpringLayout.EAST, apellido);
 			
 			layout.putConstraint(SpringLayout.WEST, correo, 10, SpringLayout.WEST, contenidor);
-			layout.putConstraint(SpringLayout.NORTH, correo, 100, SpringLayout.NORTH, contenidor);
-			layout.putConstraint(SpringLayout.NORTH, tCorreo, 100, SpringLayout.NORTH, contenidor);
+			layout.putConstraint(SpringLayout.NORTH, correo, 75, SpringLayout.NORTH, contenidor);
+			layout.putConstraint(SpringLayout.NORTH, tCorreo, 75, SpringLayout.NORTH, contenidor);
 			layout.putConstraint(SpringLayout.WEST, tCorreo, 30, SpringLayout.EAST, correo);
 			
 			layout.putConstraint(SpringLayout.WEST, edad, 10, SpringLayout.WEST, contenidor);
-			layout.putConstraint(SpringLayout.NORTH, edad, 125, SpringLayout.NORTH, contenidor);
-			layout.putConstraint(SpringLayout.NORTH, sEdad, 125, SpringLayout.NORTH, contenidor);
+			layout.putConstraint(SpringLayout.NORTH, edad, 100, SpringLayout.NORTH, contenidor);
+			layout.putConstraint(SpringLayout.NORTH, sEdad, 100, SpringLayout.NORTH, contenidor);
 			layout.putConstraint(SpringLayout.WEST, sEdad, 43, SpringLayout.EAST, edad);
 			
 			layout.putConstraint(SpringLayout.WEST, user, 10, SpringLayout.WEST, contenidor);
-			layout.putConstraint(SpringLayout.NORTH, user, 150, SpringLayout.NORTH, contenidor);
-			layout.putConstraint(SpringLayout.NORTH, tUser, 150, SpringLayout.NORTH, contenidor);
+			layout.putConstraint(SpringLayout.NORTH, user, 125, SpringLayout.NORTH, contenidor);
+			layout.putConstraint(SpringLayout.NORTH, tUser, 125, SpringLayout.NORTH, contenidor);
 			layout.putConstraint(SpringLayout.WEST, tUser, 25, SpringLayout.EAST, user);
 			
 			layout.putConstraint(SpringLayout.WEST, pswd, 10, SpringLayout.WEST, contenidor);
-			layout.putConstraint(SpringLayout.NORTH, pswd, 175, SpringLayout.NORTH, contenidor);
-			layout.putConstraint(SpringLayout.NORTH, tPswd, 175, SpringLayout.NORTH, contenidor);
+			layout.putConstraint(SpringLayout.NORTH, pswd, 150, SpringLayout.NORTH, contenidor);
+			layout.putConstraint(SpringLayout.NORTH, tPswd, 150, SpringLayout.NORTH, contenidor);
 			layout.putConstraint(SpringLayout.WEST, tPswd, 3, SpringLayout.EAST, pswd);
-					
 			
-			frame.setSize(300,400);
+			
+			layout.putConstraint(SpringLayout.NORTH, boto, 210, SpringLayout.NORTH, contenidor);
+			layout.putConstraint(SpringLayout.WEST, boto, 100, SpringLayout.WEST, contenidor);
+				
+			
+			frame.setSize(300,300);
 			frame.setLocation(600, 100);
-			//frame.setLayout(new BoxLayout(frame.getContentPane(),BoxLayout.Y_AXIS));
-			frame.add(zonaBoto);
+			//frame.add(zonaBoto);
+			
 			frame.setVisible(true);
 			frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);		
 			
 		}
 		
-		public void crearZonaBoto(){
-			zonaBoto = new JPanel();//creo la zona on hi posare el boto
-			//zonaBoto.setLayout(new BoxLayout(zonaBoto, BoxLayout.Y_AXIS));
-			boto = new JButton();//creo el boto
-			
-			boto.setText("Validar");
-			
-			zonaBoto.add(boto); //a la zona per posar el boto hi  poso el boto
-		}
+//		public void crearZonaBoto(){
+//			zonaBoto = new JPanel();//creo la zona on hi posare el boto
+//			zonaBoto.setLayout(new BoxLayout(zonaBoto, BoxLayout.Y_AXIS));
+//			boto = new JButton("Validar");//creo el boto
+//			zonaBoto.add(boto);
+//			
+//		}
 		
 		//metode4 fer desapareixer la finestra quan es cliqui en boto "ENTRAR"
 		public void tancarFinestra(){
